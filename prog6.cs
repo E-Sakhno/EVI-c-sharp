@@ -12,7 +12,7 @@ namespace EVI6
     {
         static void Main(string[] args)
         {
-            Random r = new Random();
+            Random r = new Random(410);
             int[,] a = new int[4, 4];
             for (int i = 0; i < 4; i++)
             {
@@ -25,19 +25,19 @@ namespace EVI6
             foreach (var item in a)
             {
                 Console.Write("{0} ", item);
-                counter += 1;
+                counter++;
                 if (counter % 4 == 0)
                 {
                     Console.Write("\n");
                 }
             }
-            Console
-                .Write("\n------- \nСумма элементов ниже главной диагонали матрицы: ");
+            Console.WriteLine(new string('-', 14));
+            Console.Write("\nСумма элементов ниже главной диагонали матрицы: ");
             int sum_n = 0;
             int sum_v = 0;
-            for (int i = 1; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 4; j++)
                 {
                     if (j >= i)
                     {
@@ -52,7 +52,7 @@ namespace EVI6
                 .Write("Сумма элементов выше главной диагонали матрицы: ");
             for (int i = 0; i < 4; i++)
             {
-                for (int j = 1; j < 4; j++)
+                for (int j = 0; j < 4; j++)
                 {
                     if (j <= i)
                     {
@@ -62,8 +62,7 @@ namespace EVI6
                 }
             }
             Console.Write(sum_v);
-            Console
-                .Write("\nРазность равна: {0}", sum_v-sum_n);
+            Console.Write("\nРазность равна: {0}", sum_v-sum_n);
             
         }
     }
