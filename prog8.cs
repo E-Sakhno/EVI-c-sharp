@@ -13,15 +13,15 @@ namespace EVI8
         {
             byte[,] a = new byte[10, 10];
             Random r = new Random(410);
-           for (byte i = 0; i < 10; i++)
-           {
-               for (byte j = 0; j < 10; j++)
-               {
-                   a[i, j] = (byte)r.Next(0, 256);
-                   Console.Write(a[i,j]+"\t");
-               }
-               Console.Write("\n");
-           }
+            for (byte i = 0; i < 10; i++)
+            {
+                for (byte j = 0; j < 10; j++)
+                {
+                    a[i, j] = (byte) r.Next(0, 256);
+                    Console.Write(a[i, j] + "\t");
+                }
+                Console.Write("\n");
+            }
 
             int sum = 0;
             foreach (var b in a)
