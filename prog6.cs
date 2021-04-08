@@ -13,12 +13,12 @@ namespace EVI6
         static void Main(string[] args)
         {
             Random r = new Random(410);
-            int[,] a = new int[5, 7];
-            for (int i = 0; i < 5; i++)
+            int[,] a = new int[4, 4];
+            for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < 7; j++)
+                for (int j = 0; j < 4; j++)
                 {
-                    a[i, j] = r.Next(0, 21);
+                    a[i, j] = r.Next(0, 10);
                 }
             }
             int counter = 0;
@@ -32,7 +32,7 @@ namespace EVI6
                 }
             }
             Console.WriteLine(new string('-', 14));
-            Console.Write("Сумма элементов ниже главной диагонали матрицы: ");
+            Console.Write("\nСумма элементов ниже главной диагонали матрицы: ");
             int sum_n = 0;
             int sum_v = 0;
             for (int i = 0; i < 4; i++)

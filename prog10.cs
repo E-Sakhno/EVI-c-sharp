@@ -56,6 +56,7 @@ namespace EVI10
                 Console.Write("{0} ", v);
                 }
             }
+            Console.ReadLine();
         }
     }
 }
