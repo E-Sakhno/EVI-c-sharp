@@ -35,6 +35,7 @@ namespace EVI2
             }
             Console.WriteLine("Число вхождений символа {0} - {1},\nчисло вхождений символа {2} - {3}.",
                 x, x_count, y, y_count);
+            Console.ReadLine();    
         }
     }
 }

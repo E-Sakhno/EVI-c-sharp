@@ -22,69 +22,57 @@ namespace EVI6
                 max_count = 0,
                 min_count = 0,
                 counter = 0;
+
             Console.WriteLine("Введите строку: ");
             s = Console.ReadLine();
             char[] b = s.ToCharArray();
             for (int i = 0; i < b.Length; i++)
             {
-                if (
-                    (char.IsSeparator(b[i])) ||
-                    (char.IsPunctuation(b[i]))
-                )
+                if ((char.IsSeparator(b[i])) || (char.IsPunctuation(b[i]))) // если символ - пробел или знак препинания
                 {
-                    Console.WriteLine (word);
-                    if (min_count == 0)
+            
+                    if (min_count == 0) // если слово рассматривается впервые
                     {
-                        Console.WriteLine("min before - {0}", min_count);
                         min_count = counter;
-                        Console.WriteLine("min after - {0}", min_count);
                     }
 
                     if ((counter < min_count) && (counter != 0))
                     {
-                        Console.WriteLine("min before - {0}", word_min);
                         word_min = word;
                         min_count = counter;
-                        Console.WriteLine("min after - {0}", word_min);
                     }
 
                     if (counter > max_count)
                     {
-                        Console.WriteLine("max berofe - {0} - ", word_max);
                         word_max = word;
                         max_count = counter;
-                        Console.WriteLine("max after - {0} - ", word_max);
                     }
                     word = "";
                     counter = 0;
                 }
-                if (char.IsLetter(b[i]))
+                if (char.IsLetter(b[i])) // если символ - буква
                 {
-                    // Console.WriteLine (counter);
-                    // Console.WriteLine (word);
                     counter++;
-                    word += Char.ToString(b[i]);
+                    word += Char.ToString(b[i]); // то "собираем" слово
                 }
             }
+            // эта часть нужна на случай, если предложение просто закончится словом - без точки
             if ((counter < min_count) && (counter != 0))
-                    {
-                        Console.WriteLine("min before - {0}", word_min);
-                        word_min = word;
-                        min_count = counter;
-                        Console.WriteLine("min after - {0}", word_min);
-                    }
+            {
+                word_min = word;
+                min_count = counter;
+            }
 
-                    if (counter > max_count)
-                    {
-                        Console.WriteLine("max berofe - {0} - ", word_max);
-                        word_max = word;
-                        max_count = counter;
-                        Console.WriteLine("max after - {0} - ", word_max);
-                    }
+            if (counter > max_count)
+            {
+                word_max = word;
+                max_count = counter;
+            }
             Console
                 .WriteLine("Самое длинное слово - {0},\nсамое короткое слово - {1}.",
                 word_max,
                 word_min);
+            Console.ReadLine();    
         }
     }
 }

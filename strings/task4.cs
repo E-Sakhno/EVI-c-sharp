@@ -19,12 +19,13 @@ namespace EVI4
             char[] b = s.ToCharArray();
             for (int i = 0; i < b.Length; i++)
             {
-                if (char.IsDigit(b[i]))
+                if (char.IsDigit(b[i])) // проверка, является ли символ цифрой
                 {
                     digit_sum += (int)Char.GetNumericValue(b[i]);
                 }
             }
             Console.WriteLine("Число цифр в строке - {0}.", digit_sum);
+            Console.ReadLine();
         }
     }
 }

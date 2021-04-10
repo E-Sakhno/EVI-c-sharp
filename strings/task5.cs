@@ -20,12 +20,13 @@ namespace EVI5
             char[] b = s.ToCharArray();
             for (int i = 0; i < b.Length; i++)
             {
-                if (char.IsDigit(b[i]))
+                if (char.IsDigit(b[i])) // проверка, является ли символ цифрой
                 {
                     x_count++;
                 }
             }
             Console.WriteLine("Число цифр в строке - {0}.", x_count);
+            Console.ReadLine();
         }
     }
 }

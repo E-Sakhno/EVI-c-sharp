@@ -19,12 +19,13 @@ namespace EVI3
             char[] b = s.ToCharArray();
             for (int i = 0; i < b.Length; i++)
             {
-                if (char.IsLetter(b[i]))
+                if (char.IsLetter(b[i])) // проверка, является ли символ буквой
                 {
                     x_count++;
                 }
             }
             Console.WriteLine("Число букв в строке - {0}.", x_count);
+            Console.ReadLine();
         }
     }
 }
