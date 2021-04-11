@@ -24,7 +24,7 @@ namespace EVI4
                     digit_sum += (int)Char.GetNumericValue(b[i]);
                 }
             }
-            Console.WriteLine("Число цифр в строке - {0}.", digit_sum);
+            Console.WriteLine("Сумма цифр в строке - {0}.", digit_sum);
             Console.ReadLine();
         }
     }
